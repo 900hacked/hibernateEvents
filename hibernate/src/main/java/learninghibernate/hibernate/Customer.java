@@ -6,17 +6,21 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
+import javax.persistence.PreRemove;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-
+@EntityListeners(EntityListener.class)
 @Entity
 @Table(name="People")
 public class Customer {
@@ -30,7 +34,7 @@ private String name;
 
 @Transient
 private String firstName;
-@Transient
+
 private String lastName;
 
 private String fullName;
@@ -70,10 +74,17 @@ public Customer( String customerName, String products,String first, String last)
 
 }
 
-@PrePersist
-public void print() {
-	System.out.println("I'll see this line before persisting");
-	}
+
+
+
+
+@Override
+public String toString() {
+	return "Customer [customerID=" + customerID + ", name=" + name + ", firstName=" + firstName + ", lastName="
+			+ lastName + ", fullName=" + fullName + ", products=" + products + ", quantity=" + quantity
+			+ ", costPerItem=" + costPerItem + ", totalPrice=" + totalPrice + ", currentDate=" + currentDate
+			+ ", gender=" + gender + "]";
+}
 
 public int getCustomerID() {
 	return customerID;

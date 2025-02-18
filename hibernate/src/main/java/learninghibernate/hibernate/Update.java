@@ -14,9 +14,9 @@ public class Update {
 		
 		Transaction transaction = session.beginTransaction();
 		
-		Customer entity = session.get(Customer.class, 30);
+		Customer entity = session.get(Customer.class, 43);
 		if (entity != null) { // Update entity field
-		entity.setProducts("JackFruit");
+		entity.setProducts("mangoes");
 		session.update(entity);
 		transaction.commit();
 

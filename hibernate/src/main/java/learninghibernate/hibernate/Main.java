@@ -22,8 +22,8 @@ public class Main {
         // Create a new Student object
         Customer customer = new Customer();
         customer.setCustomerName("brad");
-        customer.setFirstName("Brandy");
-        customer.setLastName("Kato"); //change is tracked
+        customer.setFirstName("Joseph");
+        customer.setLastName("Brandon "); //change is tracked
         customer.setFullName();
         customer.setProducts("Pears");
         customer.setQuantity(2);

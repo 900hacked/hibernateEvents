@@ -14,9 +14,9 @@ public class Delete {
 		
 		Transaction transaction = session.beginTransaction();
 		
-		Customer entity = session.get(Customer.class, 28);
+		Customer entity = session.get(Customer.class, 42);
 		if (entity != null) { // Update entity field
-		entity.setProducts("Bananas");
+		entity.setProducts("Pears");
 		session.delete(entity);
 		transaction.commit();
 
