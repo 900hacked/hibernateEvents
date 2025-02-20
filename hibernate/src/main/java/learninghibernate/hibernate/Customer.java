@@ -39,6 +39,7 @@ private String lastName;
 
 private String fullName;
 
+private String residence;
 
 
 String products;
@@ -175,6 +176,14 @@ public Gender getGender() {
 
 public void setGender(Gender gender) {
 	this.gender = gender;
+}
+
+public String getResidence() {
+	return residence;
+}
+
+public void setResidence(String residence) {
+	this.residence = residence;
 }
 
 
